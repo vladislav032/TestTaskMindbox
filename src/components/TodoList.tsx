@@ -9,10 +9,12 @@ interface Props {
 
 export const TodoList: React.FC<Props> = ({ todos, onToggle, onDelete }) => {
   return (
-    <>
-      {todos.map(todo => (
-        <TodoItem key={todo.id} todo={todo} onToggle={onToggle} onDelete={onDelete} />
-      ))}
-    </>
+    <table className="todo-list">
+      <tbody>
+        {todos.map(todo => (
+          <TodoItem key={todo.id} todo={todo} onToggle={onToggle} onDelete={onDelete} />
+        ))}
+      </tbody>
+    </table>
   );
 };
