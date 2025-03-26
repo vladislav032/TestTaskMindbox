@@ -22,28 +22,28 @@ body {
   text-align: center; /* Выравнивание контента по центру */
 }
 
-/* Поле ввода и кнопка "Добавить" */
 .todo-input-container {
-  display: flex;
-  justify-content: center; /* Выравнивание по центру */
-  gap: 10px; /* Отступ между полем ввода и кнопкой */
+  display: flow;
   width: 100%;
+  padding: 0px; /* Отступы по бокам */
+  box-sizing: border-box;
 }
 
 .todo-input-container input {
-  flex: 1; /* Поле ввода занимает всю доступную ширину */
-  padding: 8px;
+  flex: 1; /* Растягиваем поле на всю ширину */
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .todo-input-container button {
-  padding: 8px 15px;
+  padding: 10px 20px;
   border: none;
   background: #3498db;
   color: white;
   border-radius: 4px;
   cursor: pointer;
+  white-space: nowrap; /* Запрещаем перенос текста */
 }
 
 /* Таблица задач */
@@ -52,7 +52,7 @@ body {
   table-layout: fixed;
   word-wrap: break-word;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .todo-table td {
@@ -92,3 +92,17 @@ body {
   background: #3498db;
   color: white;
 }
+
+/* Контейнер списка задач с ограниченной высотой */
+.todo-table-container {
+  max-height: 200px; /* Ограничиваем высоту */
+  overflow-y: auto;  /* Добавляем вертикальную прокрутку */
+  margin-bottom: 15px; /* Отступ перед счетчиком */
+}
+
+/* Убираем наложение счетчика */
+.todo-footer {
+  margin-top: 20px; /* Отодвигаем вниз */
+  text-align: center; /* Выравниваем по центру */
+}
+
