@@ -11,68 +11,84 @@ body {
   color: #4d4d4d;
 }
 
+/* Основной контейнер списка задач */
 .todo-container {
-  max-width: 400px;
-  margin: auto;
-  font-family: Arial, sans-serif;
+  border: 2px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  margin: 20px auto;
+  background: #f9f9f9;
+  text-align: center; /* Выравнивание контента по центру */
 }
 
-.todo-header {
-  text-align: center;
-}
-
+/* Поле ввода и кнопка "Добавить" */
 .todo-input-container {
   display: flex;
-  gap: 5px;
-  margin-bottom: 10px;
-}
-
-.todo-table {
+  justify-content: center; /* Выравнивание по центру */
+  gap: 10px; /* Отступ между полем ввода и кнопкой */
   width: 100%;
-  border-collapse: collapse;
 }
 
-.todo-table th, .todo-table td {
-  border-bottom: 1px solid #ddd;
+.todo-input-container input {
+  flex: 1; /* Поле ввода занимает всю доступную ширину */
   padding: 8px;
-  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.todo-item input {
-  margin-right: 5px;
-}
-
-.todo-delete {
-  background: #ff5252;
-  color: white;
+.todo-input-container button {
+  padding: 8px 15px;
   border: none;
-  padding: 5px;
+  background: #3498db;
+  color: white;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.todo-text.completed {
-  text-decoration: line-through;
-  color: gray;
-}
-
-.todo-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Таблица задач */
+.todo-table {
+  width: 100%;
+  table-layout: fixed;
+  word-wrap: break-word;
+  border-collapse: collapse;
   margin-top: 10px;
 }
 
+.todo-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+/* Фильтры */
 .todo-filters {
   display: flex;
-  gap: 5px;
+  justify-content: space-between; /* Равномерное распределение кнопок */
+  margin-top: 20px;
+  width: 100%;
 }
 
-.todo-filter-button {
-  padding: 5px;
+.todo-filters button {
+  flex: 1; /* Равномерное распределение ширины кнопок */
+  padding: 8px 12px;
+  margin: 0 10px;
+  border: none;
   cursor: pointer;
+  background: #e0e0e0;
+  border-radius: 4px;
+  text-align: center;
 }
 
-.clear {
-  background: #ff5252;
+/* Убираем отступ у первой и последней кнопки */
+.todo-filters button:first-child {
+  margin-left: 0;
+}
+
+.todo-filters button:last-child {
+  margin-right: 0;
+}
+
+/* Стилизация активной кнопки */
+.todo-filters button.active {
+  background: #3498db;
   color: white;
 }
