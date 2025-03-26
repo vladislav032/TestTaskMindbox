@@ -45,8 +45,8 @@ export const App: React.FC = () => {
           <button className={`todo-filter-button ${filter === "completed" ? "active" : ""}`} onClick={() => setFilter("completed")}>
             Completed
           </button>
+          <button className="todo-filter-button clear" onClick={clearCompleted}>Clear completed</button>
         </div>
-        <button className="todo-filter-button clear" onClick={clearCompleted}>Clear completed</button>
       </div>
     </div>
   );
