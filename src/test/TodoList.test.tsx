@@ -1,8 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { TodoList } from "../components/TodoList"; // Путь к компоненту
-import { Todo } from "../types/todo"; // Путь к типу
-
-// Импортируем jest-dom для использования toBeInTheDocument
+import { TodoList } from "../components/TodoList";
+import { Todo } from "../types/todo";
 import '@testing-library/jest-dom'; 
 
 describe("TodoList Component", () => {

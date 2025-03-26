@@ -19,18 +19,18 @@ body {
   width: 400px;
   margin: 20px auto;
   background: #f9f9f9;
-  text-align: center; /* Выравнивание контента по центру */
+  text-align: center;
 }
 
 .todo-input-container {
   display: flow;
   width: 100%;
-  padding: 0px; /* Отступы по бокам */
+  padding: 0px;
   box-sizing: border-box;
 }
 
 .todo-input-container input {
-  flex: 1; /* Растягиваем поле на всю ширину */
+  flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -43,7 +43,7 @@ body {
   color: white;
   border-radius: 4px;
   cursor: pointer;
-  white-space: nowrap; /* Запрещаем перенос текста */
+  white-space: nowrap;
 }
 
 /* Таблица задач */
@@ -62,13 +62,13 @@ body {
 /* Фильтры */
 .todo-filters {
   display: flex;
-  justify-content: space-between; /* Равномерное распределение кнопок */
+  justify-content: space-between;
   margin-top: 20px;
   width: 100%;
 }
 
 .todo-filters button {
-  flex: 1; /* Равномерное распределение ширины кнопок */
+  flex: 1;
   padding: 8px 12px;
   margin: 0 10px;
   border: none;
@@ -95,14 +95,14 @@ body {
 
 /* Контейнер списка задач с ограниченной высотой */
 .todo-table-container {
-  max-height: 200px; /* Ограничиваем высоту */
-  overflow-y: auto;  /* Добавляем вертикальную прокрутку */
-  margin-bottom: 15px; /* Отступ перед счетчиком */
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 15px;
 }
 
 /* Убираем наложение счетчика */
 .todo-footer {
-  margin-top: 20px; /* Отодвигаем вниз */
-  text-align: center; /* Выравниваем по центру */
+  margin-top: 20px;
+  text-align: center;
 }
 
