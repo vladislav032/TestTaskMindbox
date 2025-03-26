@@ -4,7 +4,6 @@ import { TodoAll } from "./components/TodoAll";
 import { TodoActive } from "./components/TodoActive";
 import { TodoCompleted } from "./components/TodoCompleted";
 import { useTodos } from "./hooks/useTodos";
-import './index.css'
 
 export const App: React.FC = () => {
   const { todos, addTodo, toggleTodo, deleteTodo, clearCompleted } = useTodos();
