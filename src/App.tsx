@@ -16,25 +16,31 @@ export const App: React.FC = () => {
         <TodoInput onAdd={addTodo} />
       </div>
 
-      {/* Таблица для списка дел */}
-      <table className="todo-table">
-        <thead>
-          <tr>
-            <th>Done</th>
-            <th>Task</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filter === "all" && <TodoAll todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />}
-          {filter === "active" && <TodoActive todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />}
-          {filter === "completed" && <TodoCompleted todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />}
-        </tbody>
-      </table>
+      {/* Контейнер с прокруткой */}
+      <div className="todo-table-container">
+        <table className="todo-table">
+          <thead>
+            <tr>
+              <th>Done</th>
+              <th>Task</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filter === "all" && <TodoAll todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />}
+            {filter === "active" && <TodoActive todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />}
+            {filter === "completed" && <TodoCompleted todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Счетчик задач */}
+      <div className="todo-footer">
+        <span>{todos.length} items left</span>
+      </div>
 
       {/* Footer в одну строку */}
       <div className="todo-footer">
-        <span>{todos.length} items left</span>
         <div className="todo-filters">
           <button className={`todo-filter-button ${filter === "all" ? "active" : ""}`} onClick={() => setFilter("all")}>
             All
