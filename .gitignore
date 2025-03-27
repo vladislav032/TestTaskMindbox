@@ -9,7 +9,7 @@ lerna-debug.log*
 
 # Dependency directories
 node_modules/
-/.pnp
+.pnp/
 .pnp.js
 
 # Build directories
@@ -22,6 +22,8 @@ out/
 # Cache
 .cache/
 .temp/
+.eslintcache
+jest-cache/
 
 # Environment files
 .env
@@ -45,19 +47,12 @@ out/
 # TypeScript and Jest
 *.tsbuildinfo
 /coverage/
-/.jest/
-jest.config.js
-
-# Debug files
-debug.log
-
-# macOS
-.DS_Store
-
-# Testing
 /cypress/videos/
 /cypress/screenshots/
 
-# Optional
-.eslintcache
+# Debug files
+debug.log
 *.pid
+
+# macOS
+.DS_Store
