@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { TodoAll } from '../components/TodoAll';
+import { TodoAll } from '../components/state-сomponents/TodoAll';
 import { Todo } from '../types/todo';
 import '@testing-library/jest-dom';
 

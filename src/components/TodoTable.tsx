@@ -1,6 +1,6 @@
-import { TodoAll } from "./TodoAll";
-import { TodoActive } from "./TodoActive";
-import { TodoCompleted } from "./TodoCompleted";
+import { TodoAll } from "./state-сomponents/TodoAll";
+import { TodoActive } from "./state-сomponents/TodoActive";
+import { TodoCompleted } from "./state-сomponents/TodoCompleted";
 
 interface TodoTableProps {
   todos: { id: number; text: string; completed: boolean }[];

@@ -3,15 +3,15 @@ import { TodoTable } from '../components/TodoTable';
 import '@testing-library/jest-dom';
 
 // Мокаем дочерние компоненты с правильными путями
-jest.mock('../components/TodoAll', () => ({
+jest.mock('../components/state-сomponents/TodoAll', () => ({
   TodoAll: () => <tbody data-testid="todo-all-body" />
 }));
 
-jest.mock('../components/TodoActive', () => ({
+jest.mock('../components/state-сomponents/TodoActive', () => ({
   TodoActive: () => <tbody data-testid="todo-active-body" />
 }));
 
-jest.mock('../components/TodoCompleted', () => ({
+jest.mock('../components/state-сomponents/TodoCompleted', () => ({
   TodoCompleted: () => <tbody data-testid="todo-completed-body" />
 }));
 

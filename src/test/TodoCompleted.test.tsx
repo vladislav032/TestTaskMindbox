@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { TodoCompleted } from '../components/TodoCompleted';
+import { TodoCompleted } from '../components/state-сomponents/TodoCompleted';
 import { Todo } from '../types/todo';
 import '@testing-library/jest-dom';
 
