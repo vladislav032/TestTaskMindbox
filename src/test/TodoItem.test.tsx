@@ -13,14 +13,14 @@ describe("Компонент TodoItem", () => {
   const mockOnToggle = jest.fn();
   const mockOnDelete = jest.fn();
 
-  test("рендерит задачу с правильным текстом", () => {
+  it("рендерит задачу с правильным текстом", () => {
     render(<TodoItem todo={mockTodo} onToggle={mockOnToggle} onDelete={mockOnDelete} />);
 
     expect(screen.getByText("Тестовая задача")).toBeInTheDocument();
     expect(screen.getByRole("checkbox")).not.toBeChecked();
   });
 
-  test("вызывает onToggle при нажатии на чекбокс", () => {
+  it("вызывает onToggle при нажатии на чекбокс", () => {
     render(<TodoItem todo={mockTodo} onToggle={mockOnToggle} onDelete={mockOnDelete} />);
 
     const checkbox = screen.getByRole("checkbox");
@@ -30,7 +30,7 @@ describe("Компонент TodoItem", () => {
     expect(mockOnToggle).toHaveBeenCalledWith(1);
   });
 
-  test("вызывает onDelete при нажатии на кнопку удаления", () => {
+  it("вызывает onDelete при нажатии на кнопку удаления", () => {
     render(<TodoItem todo={mockTodo} onToggle={mockOnToggle} onDelete={mockOnDelete} />);
 
     const deleteButton = screen.getByText("Удалить");
@@ -40,7 +40,7 @@ describe("Компонент TodoItem", () => {
     expect(mockOnDelete).toHaveBeenCalledWith(1);
   });
 
-  test("применяет класс 'completed', когда задача завершена", () => {
+  it("применяет класс 'completed', когда задача завершена", () => {
     const completedTodo = { ...mockTodo, completed: true };
     render(<TodoItem todo={completedTodo} onToggle={mockOnToggle} onDelete={mockOnDelete} />);
 

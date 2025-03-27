@@ -14,7 +14,7 @@ describe("Компонент TodoList", () => {
   const mockOnToggle = jest.fn();
   const mockOnDelete = jest.fn();
 
-  test("рендерит TodoList с правильным количеством элементов", () => {
+  it("рендерит TodoList с правильным количеством элементов", () => {
     render(<TodoList todos={mockTodos} onToggle={mockOnToggle} onDelete={mockOnDelete} />);
     
     // Проверяем, что рендерятся два элемента списка
@@ -23,7 +23,7 @@ describe("Компонент TodoList", () => {
     expect(screen.getByText("Тестовая задача 2")).toBeInTheDocument();
   });
 
-  test("вызывает функцию onToggle при нажатии на чекбокс", () => {
+  it("вызывает функцию onToggle при нажатии на чекбокс", () => {
     render(<TodoList todos={mockTodos} onToggle={mockOnToggle} onDelete={mockOnDelete} />);
     
     // Находим чекбокс и кликаем по нему
@@ -34,7 +34,7 @@ describe("Компонент TodoList", () => {
     expect(mockOnToggle).toHaveBeenCalledWith(mockTodos[0].id);
   });
 
-  test("вызывает функцию onDelete при нажатии на кнопку удаления", () => {
+  it("вызывает функцию onDelete при нажатии на кнопку удаления", () => {
     render(<TodoList todos={mockTodos} onToggle={mockOnToggle} onDelete={mockOnDelete} />);
     
     // Находим кнопку удаления и кликаем по ней
