@@ -101,7 +101,7 @@ npm install --save-dev @testing-library/react @testing-library/jest-dom @testing
   ✓ Обрабатывает изменение статуса для каждого элемента  
   ✓ Корректно удаляет задачи из списка  
 
-### TodoFooter (Нижняя часть приложения)
+### TodoTable (Таблица)
 - **Рендеринг компонента**  
   ✓ Корректно отображает все задачи при фильтре 'all'  
   ✓ Отображает обе задачи (активную и завершенную) в общем списке  
@@ -114,7 +114,7 @@ npm install --save-dev @testing-library/react @testing-library/jest-dom @testing
   ✓ Взаимодействует с TodoAll для отображения полного списка задач  
   ✓ Передает пропсы onToggle и onDelete в дочерние компоненты  
 
-### TodoTable (Таблица)
+### TodoFooter (Нижняя часть приложения)
 - **Выбор правильного дочернего компонента**  
   ✓ Отображает TodoAll при фильтре "all"  
   ✓ Показывает только TodoActive при фильтре "active"  
