@@ -3,43 +3,45 @@ import { TodoList } from "../components/TodoList";
 import { Todo } from "../types/todo";
 import '@testing-library/jest-dom'; 
 
-describe("TodoList Component", () => {
+describe("Компонент TodoList", () => {
+  // Массив с тестовыми задачами
   const mockTodos: Todo[] = [
-    { id: 1, text: "Test Todo 1", completed: false },
-    { id: 2, text: "Test Todo 2", completed: true },
+    { id: 1, text: "Тестовая задача 1", completed: false },
+    { id: 2, text: "Тестовая задача 2", completed: true },
   ];
 
+  // Моки функций-обработчиков
   const mockOnToggle = jest.fn();
   const mockOnDelete = jest.fn();
 
-  test("renders TodoList with correct number of items", () => {
+  test("рендерит TodoList с правильным количеством элементов", () => {
     render(<TodoList todos={mockTodos} onToggle={mockOnToggle} onDelete={mockOnDelete} />);
     
-    // Проверка, что два элемента списка рендерятся
+    // Проверяем, что рендерятся два элемента списка
     expect(screen.getAllByRole("checkbox")).toHaveLength(mockTodos.length);
-    expect(screen.getByText("Test Todo 1")).toBeInTheDocument();
-    expect(screen.getByText("Test Todo 2")).toBeInTheDocument();
+    expect(screen.getByText("Тестовая задача 1")).toBeInTheDocument();
+    expect(screen.getByText("Тестовая задача 2")).toBeInTheDocument();
   });
 
-  test("calls onToggle function when checkbox is clicked", () => {
+  test("вызывает функцию onToggle при нажатии на чекбокс", () => {
     render(<TodoList todos={mockTodos} onToggle={mockOnToggle} onDelete={mockOnDelete} />);
     
-    // Найти checkbox и кликнуть по нему
+    // Находим чекбокс и кликаем по нему
     const checkbox = screen.getAllByRole("checkbox")[0];
     fireEvent.click(checkbox);
 
-    // Проверить, что функция onToggle была вызвана с правильным id
+    // Проверяем, что функция onToggle вызвана с правильным id
     expect(mockOnToggle).toHaveBeenCalledWith(mockTodos[0].id);
   });
 
-  test("calls onDelete function when delete button is clicked", () => {
+  test("вызывает функцию onDelete при нажатии на кнопку удаления", () => {
     render(<TodoList todos={mockTodos} onToggle={mockOnToggle} onDelete={mockOnDelete} />);
     
-    // Найти кнопку удаления и кликнуть по ней
+    // Находим кнопку удаления и кликаем по ней
     const deleteButton = screen.getAllByRole("button")[0];
     fireEvent.click(deleteButton);
 
-    // Проверить, что функция onDelete была вызвана с правильным id
+    // Проверяем, что функция onDelete вызвана с правильным id
     expect(mockOnDelete).toHaveBeenCalledWith(mockTodos[0].id);
   });
 });
