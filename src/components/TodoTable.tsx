@@ -1,9 +1,10 @@
 import { TodoAll } from "./state-сomponents/TodoAll";
+import { Todo } from "../types/todo";
 import { TodoActive } from "./state-сomponents/TodoActive";
 import { TodoCompleted } from "./state-сomponents/TodoCompleted";
 
 interface TodoTableProps {
-  todos: { id: number; text: string; completed: boolean }[];
+  todos: Todo[];
   filter: "all" | "active" | "completed";
   onToggle: (id: number) => void;
   onDelete: (id: number) => void;
